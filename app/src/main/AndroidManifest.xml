@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.lzf.productionlinecontrol"
+          android:installLocation="internalOnly">
+
+    <!--
+        320dp：常见手机屏幕（240x320 ldpi、320x480 mdpi、480x800 hdpi 等）。
+        480dp：中间平板电脑，例如 Streak (480x800 mdpi)。
+        600dp：7 英寸平板电脑 (600x1024 mdpi)。
+        720dp：10 英寸平板电脑（720x1280 mdpi、800x1280 mdpi 等）。
+
+        可以使用要用于宽度和/或高度的的任何值，在用于手机和平板电脑的不同布局资源之间切换。
+        例如， 如果 600dp 是平板电脑布局支持的最小可用宽度，可以提供以下两组布局：
+        res/layout/main_activity.xml # For handsets
+        res/layout-sw600dp/main_activity.xml # For tablets
+        在此情况下，可用屏幕空间的最小宽度必须是 600dp，才可应用平板电脑布局。
+        对于要进一步自定义 UI 以区分不同尺寸 （例如 7 英寸和 10 英寸平板电脑）的其他情况，可以定义其他最小宽度布局：
+        res/layout/main_activity.xml # For handsets (smaller than 600dp available width)
+        res/layout-sw600dp/main_activity.xml # For 7” tablets (600dp wide and bigger)
+        res/layout-sw720dp/main_activity.xml # For 10” tablets (720dp wide and bigger)
+        请注意，使用 swdp 是指定布局可用于整体屏幕尺寸的简便方法，它会忽略屏幕的方向。
+
+        只支持平板横屏
+    -->
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:requiresSmallestWidthDp="600"
+        android:smallScreens="false"
+        android:xlargeScreens="true"/>
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+
+
+    <application
+        android:name=".LzfApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.IndexActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <!-- luncher app -->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="com.lzf.productionlinecontrol.activity.MainActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TextManagerActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="com.lzf.productionlinecontrol.activity.TextManagerActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NewTxtActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="com.lzf.productionlinecontrol.activity.NewTxtActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.EditActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="com.lzf.productionlinecontrol.activity.EditActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SaveTxtActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="com.lzf.productionlinecontrol.activity.SaveTxtActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".broadcastreceiver.BootCompletedReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastreceiver.RebootReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.REBOOT"/>
+
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastreceiver.UserPresentReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.USER_PRESENT"/>
+
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

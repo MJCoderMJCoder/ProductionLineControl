@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context="com.lzf.productionlinecontrol.activity.MainActivity">
+
+    <TextView
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="@color/topBar"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="控制系统"
+        android:textColor="@android:color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/topBar"
+        android:layout_margin="8dp"
+        android:background="@android:color/white">
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <Button
+            android:id="@+id/textBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@color/btnBg"
+            android:onClick="onClick"
+            android:text="文本操作"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@color/btnBg"
+            android:text="喷印配置"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@color/btnBg"
+            android:text="系统维护"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/btnBg"
+            android:text="系统设置"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@color/btnBg"
+            android:text="文件操作"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBtn"
+        android:layout_below="@id/placeholder"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/sysIdHint"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|right"
+                android:text="系统ID"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/sysId"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/sysIdHint"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:text="A"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <TextView
+                android:id="@+id/productLineHint"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sysIdHint"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|right"
+                android:text="生产线号"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/productLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/sysId"
+                android:layout_toRightOf="@id/productLineHint"
+                android:background="@android:color/white"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
