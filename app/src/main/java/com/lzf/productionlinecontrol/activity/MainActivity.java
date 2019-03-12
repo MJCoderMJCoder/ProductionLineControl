@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     // Should we show an explanation?
                     if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                             permission)) {
-                        Toast.makeText(this, "MyHfutEduCn获取权限失败，请在“设置”-“应用权限”-打开所需权限", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "获取权限失败，请在“设置”-“应用权限”-打开所需权限", Toast.LENGTH_LONG).show();
                     }
                 }
             }
