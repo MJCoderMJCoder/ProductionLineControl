@@ -23,12 +23,12 @@
 
         只支持平板横屏
     -->
-    <supports-screens
+    <!--<supports-screens
         android:largeScreens="true"
         android:normalScreens="false"
         android:requiresSmallestWidthDp="600"
         android:smallScreens="false"
-        android:xlargeScreens="true"/>
+        android:xlargeScreens="true"/>-->
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
@@ -119,21 +119,21 @@
         </activity>
 
         <receiver android:name=".broadcastreceiver.BootCompletedReceiver">
-            <intent-filter android:priority="2147483647">
+            <intent-filter android:priority="2147">
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
 
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>
         </receiver>
         <receiver android:name=".broadcastreceiver.RebootReceiver">
-            <intent-filter android:priority="2147483647">
+            <intent-filter android:priority="483">
                 <action android:name="android.intent.action.REBOOT"/>
 
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>
         </receiver>
         <receiver android:name=".broadcastreceiver.UserPresentReceiver">
-            <intent-filter android:priority="2147483647">
+            <intent-filter android:priority="647">
                 <action android:name="android.intent.action.USER_PRESENT"/>
 
                 <category android:name="android.intent.category.HOME"/>
