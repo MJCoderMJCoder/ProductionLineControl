@@ -20,7 +20,7 @@
             android:layout_centerInParent="true"
             android:padding="5dp"
             android:text="保存文本"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <ImageView
             android:id="@+id/close"
@@ -30,7 +30,7 @@
             android:onClick="onClick"
             android:padding="5dp"
             android:src="@drawable/close"
-            android:tint="@android:color/white"/>
+            android:tint="@color/white"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -50,7 +50,7 @@
             android:background="@color/btnBg"
             android:onClick="onClick"
             android:text="保      存"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/cancel"
@@ -61,7 +61,7 @@
             android:background="@color/btnBg"
             android:onClick="onClick"
             android:text="取      消"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/back"
@@ -72,7 +72,7 @@
             android:background="@color/btnBg"
             android:onClick="onClick"
             android:text="返      回"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <RelativeLayout

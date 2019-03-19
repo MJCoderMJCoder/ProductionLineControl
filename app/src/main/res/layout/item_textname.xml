@@ -3,7 +3,7 @@
                 android:id="@+id/txtNameRelative"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white">
+                android:background="@color/white">
 
     <ImageView
         android:id="@+id/box"
@@ -24,6 +24,6 @@
         android:layout_toRightOf="@id/box"
         android:padding="5dp"
         android:text="测试文本"
-        android:textColor="@android:color/black"/>
+        android:textColor="@color/black"/>
 
 </RelativeLayout>

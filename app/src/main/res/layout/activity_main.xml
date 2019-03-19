@@ -16,7 +16,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="控制系统"
-        android:textColor="@android:color/white"/>
+        android:textColor="@color/white"/>
 
     <RelativeLayout
         android:id="@+id/placeholder"
@@ -24,7 +24,7 @@
         android:layout_height="150dp"
         android:layout_below="@id/topBar"
         android:layout_margin="8dp"
-        android:background="@android:color/white">
+        android:background="@color/white">
     </RelativeLayout>
 
     <LinearLayout
@@ -44,7 +44,7 @@
             android:background="@color/btnBg"
             android:onClick="onClick"
             android:text="文本操作"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:layout_width="0dp"
@@ -53,7 +53,7 @@
             android:layout_weight="1"
             android:background="@color/btnBg"
             android:text="喷印配置"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:layout_width="0dp"
@@ -62,7 +62,7 @@
             android:layout_weight="1"
             android:background="@color/btnBg"
             android:text="系统维护"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:layout_width="0dp"
@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:background="@color/btnBg"
             android:text="系统设置"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:layout_width="0dp"
@@ -80,7 +80,7 @@
             android:layout_weight="1"
             android:background="@color/btnBg"
             android:text="文件操作"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -112,7 +112,7 @@
                 android:layout_marginRight="10dp"
                 android:gravity="center_vertical|right"
                 android:text="系统ID"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/sysId"
@@ -123,7 +123,7 @@
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:text="A"
-                android:textColor="@android:color/holo_red_dark"/>
+                android:textColor="@color/holo_red_dark"/>
 
             <TextView
                 android:id="@+id/productLineHint"
@@ -133,7 +133,7 @@
                 android:layout_marginRight="10dp"
                 android:gravity="center_vertical|right"
                 android:text="生产线号"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/productLine"
@@ -143,7 +143,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/sysId"
                 android:layout_toRightOf="@id/productLineHint"
-                android:background="@android:color/white"/>
+                android:background="@color/white"/>
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

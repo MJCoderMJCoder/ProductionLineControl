@@ -111,7 +111,7 @@ public class TextManagerActivity extends AppCompatActivity {
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
                         AlertDialog alert = builder.setIcon(R.mipmap.ic_launcher)
                                 .setTitle("警告")
-                                .setMessage("该文本正在使用！（已被加载，不可删除）")
+                                .setMessage("该文件正在使用！")
                                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

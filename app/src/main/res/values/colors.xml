@@ -6,6 +6,10 @@
 
     <color name="topBar">#072A45</color>
     <color name="btnBg">#0243A7</color>
-    <color name="bg">#F2F2F2</color>
+    <color name="bg">#aaa</color>
+    <color name="white">#ffFFFFFF</color>
+    <color name="black">#ff000000</color>
     <color name="tvPlaceholder">#6A999F</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+    <color name="transparent">#00000000</color>
 </resources>
