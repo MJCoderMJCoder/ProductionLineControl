@@ -4,16 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.widget.Toast;
-
-import com.lzf.productionlinecontrol.activity.IndexActivity;
 
 /**
  * Created by MJCoder on 2019-02-28.
  */
 
 public class UserPresentReceiver extends BroadcastReceiver {
-    
+
     private final String ACTION_USER_PRESENT = "android.intent.action.USER_PRESENT";
 
     public UserPresentReceiver() {
@@ -23,8 +20,8 @@ public class UserPresentReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (ACTION_USER_PRESENT.equals(intent.getAction())) {
-            Toast.makeText(context, "解锁", Toast.LENGTH_LONG).show();
-            context.startActivity(new Intent(context, IndexActivity.class));
+            //            Toast.makeText(context, "解锁", Toast.LENGTH_LONG).show();
+            //            context.startActivity(new Intent(context, IndexActivity.class));
         }
     }
 

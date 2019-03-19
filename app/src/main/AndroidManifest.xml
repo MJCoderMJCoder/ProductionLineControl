@@ -118,7 +118,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".broadcastreceiver.BootCompletedReceiver">
+        <!--<receiver android:name=".broadcastreceiver.BootCompletedReceiver">
             <intent-filter android:priority="2147">
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
 
@@ -138,7 +138,7 @@
 
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>
-        </receiver>
+        </receiver>-->
     </application>
 
 </manifest>

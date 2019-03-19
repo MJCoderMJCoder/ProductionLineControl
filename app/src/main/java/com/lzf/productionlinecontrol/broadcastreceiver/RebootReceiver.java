@@ -4,16 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.widget.Toast;
-
-import com.lzf.productionlinecontrol.activity.IndexActivity;
 
 /**
  * Created by MJCoder on 2019-02-28.
  */
 
 public class RebootReceiver extends BroadcastReceiver {
-    
+
     private final String ACTION_REBOOT = "android.intent.action.REBOOT";
 
     public RebootReceiver() {
@@ -23,8 +20,8 @@ public class RebootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (ACTION_REBOOT.equals(intent.getAction())) {
-            Toast.makeText(context, "PAD重启", Toast.LENGTH_LONG).show();
-            context.startActivity(new Intent(context, IndexActivity.class));
+            //            Toast.makeText(context, "PAD重启", Toast.LENGTH_LONG).show();
+            //            context.startActivity(new Intent(context, IndexActivity.class));
         }
     }
 
