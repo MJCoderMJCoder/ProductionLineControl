@@ -131,8 +131,29 @@ public class TextManagerActivity extends AppCompatActivity {
                 break;
             case R.id.load:
                 if (textCache != null) {
-                    textCache.setLoaded(true);
-                    reusableAdapter.notifyDataSetChanged();
+                    int temp = 0;
+                    for (Text text : LzfApplication.textList) {
+                        if (text.isLoaded() && text.getTextName().equals(textCache.getTextName()) && text.getTextContent().equals(textCache.getTextContent())) {
+                            temp = 1;
+                            break;
+                        } else if (text.isLoaded() && !text.getTextName().equals(textCache.getTextName()) && !text.getTextContent().equals(textCache.getTextContent())) {
+                            temp = 2;
+                            break;
+                        }
+                    }
+                    switch (temp) {
+                        case 0:
+                            textCache.setLoaded(true);
+                            reusableAdapter.notifyDataSetChanged();
+                            break;
+                        case 1:
+                            textCache.setLoaded(false);
+                            reusableAdapter.notifyDataSetChanged();
+                            break;
+                        case 2:
+                            Toast.makeText(this, "抱歉，不可能同时加载多个文件！", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 } else {
                     Toast.makeText(this, "请先选中一个文本", Toast.LENGTH_SHORT).show();
                 }
